@@ -1,8 +1,9 @@
 #ifndef SERVER_SYSTEMUTILS_H
 #define SERVER_SYSTEMUTILS_H
 
-#ifdef WIN32
-#include<windows.h>
+#ifdef _WIN64
+#include <windows.h>
+#include "winsock.h"
 #else
 #include <unistd.h>
 #endif

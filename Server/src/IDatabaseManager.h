@@ -6,7 +6,7 @@
 class IDatabaseManager
 {
 public:
-    virtual void gotMeasurement(IMeasurement measurement) = 0;
+    //virtual void gotMeasurement(IMeasurement* measurement) = 0;
 };
 
 #endif /* IDatabaseManager_h */

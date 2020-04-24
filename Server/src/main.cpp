@@ -3,9 +3,14 @@
 #include <vector>
 #include <IRequestListener.h>
 #include "ConnectionsManager.h"
+<<<<<<< HEAD
 #include "SensorConnectionHandler.h"
 
 using namespace std;
+=======
+#include "ConnectionException.h"
+#include "DatabaseManager.h"
+>>>>>>> 6dcc5b5... Added database connection
 
 class MockListener : public IRequestListener
 {
@@ -19,13 +24,27 @@ public:
         double value = getData<double>(msg, cursorPos);
         cout << "client " << clientId << "     timestamp: " << timestamp << "     value: " << value << endl;
 
+<<<<<<< HEAD
         return response;
     }
 };
+=======
+int initNetwork()
+{
+#ifdef _WIN64
+    WSADATA wsaData;
+    return WSAStartup( MAKEWORD( 2, 2 ), & wsaData );
+#else
+    return 0;
+#endif
+}
+>>>>>>> 6dcc5b5... Added database connection
 
 int main(int argc, char *argv[])
 {
-    initNetwork();
+    auto* dbManago = new DatabaseManager();
+    dbManago->run();
+    /*initNetwork();
 
     cout << "START" << endl;
 
@@ -38,5 +57,6 @@ int main(int argc, char *argv[])
 //    connectionsManager->startAcceptingSensors();
 
     cout << "END" << endl;
+    */
     return 0;
 }

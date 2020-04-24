@@ -31,4 +31,16 @@ namespace sc
 
         return acceptingSocket;
     }
+<<<<<<< HEAD
+=======
+
+    int ISensorConnectionHandler::closeSocket(int socketDescriptor)
+    {
+    #ifdef _WIN64
+        return closesocket(socketDescriptor);
+    #else
+        return close(socketDescriptor);
+    #endif
+    }
+>>>>>>> 6dcc5b5... Added database connection
 }
