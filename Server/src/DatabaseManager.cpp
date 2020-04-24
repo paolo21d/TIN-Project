@@ -7,11 +7,11 @@ typedef std::vector<std::string> journal;
 void DatabaseManager::run() {
 
     try {
-        std::cout<<"chuj";
+        std::cout<<"chuj"<<std::endl;
         env = oracle::occi::Environment::createEnvironment(oracle::occi::Environment::OBJECT);
-        std::cout<<"w dupe";
+        std::cout<<"w dupe" << std::endl;
         oracle::occi::Connection *conn = env->createConnection(userName, password, connectString);
-        std::cout<<"o tak";
+        std::cout<<"o tak" << std::endl;
         oracle::occi::Statement*  stmt = conn->createStatement(
             "SELECT id, name FROM test1 ");
 
@@ -21,9 +21,9 @@ void DatabaseManager::run() {
         try {
             while (rs->next())
             {
-                std::cout << "id: " << rs->getInt(1) << std::endl;
+                std::cout << "id: " << rs->getInt(1) << " ";
                 //std::cout << "id: " << rs->getInt(2) << std::endl;
-                std::cout << rs->getString(2);
+                std::cout << rs->getString(2) << std::endl;
                 //std::cout << "instructor: " << rs->getInt(2) << std::endl;
                 /*getVector(rs, 2, c2);
                 for (int i = 0; i < c2.size(); ++i)
