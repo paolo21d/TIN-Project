@@ -4,10 +4,10 @@
 #include <IRequestListener.h>
 #include "ConnectionsManager.h"
 #include "SensorConnectionHandler.h"
-
-using namespace std;
 #include "ConnectionException.h"
 #include "DatabaseManager.h"
+
+using namespace std;
 
 class MockListener : public IRequestListener
 {
