@@ -1,7 +1,7 @@
 #ifndef SERVER_NETWORKUTILS_H
 #define SERVER_NETWORKUTILS_H
 
-#ifdef _WIN64
+#if defined(WIN32) || defined(_WIN64)
 #include "winsock.h"
 #else
 #include <netinet/in.h>

@@ -2,7 +2,7 @@
 
 void sleepSecs(int secs)
 {
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN64)
     Sleep(secs / 1000);
 #else
     sleep(secs);
@@ -11,7 +11,7 @@ void sleepSecs(int secs)
 
 void sleepMillis(int millis)
 {
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN64)  
     Sleep(millis);
 #else
     usleep(millis * 1000);

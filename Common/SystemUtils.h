@@ -1,7 +1,7 @@
 #ifndef SERVER_SYSTEMUTILS_H
 #define SERVER_SYSTEMUTILS_H
 
-#ifdef _WIN64
+#if defined(WIN32) || defined(_WIN64)
 #include <windows.h>
 #include "winsock.h"
 #else

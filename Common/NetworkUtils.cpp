@@ -2,7 +2,7 @@
 
 int initNetwork()
 {
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN64)
     WSADATA wsaData;
     return WSAStartup( MAKEWORD( 2, 2 ), & wsaData );
 #else
@@ -12,7 +12,7 @@ int initNetwork()
 
 int closeSocket(int socketDescriptor)
 {
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN64)
     return closesocket(socketDescriptor);
 #else
     return close(socketDescriptor);
