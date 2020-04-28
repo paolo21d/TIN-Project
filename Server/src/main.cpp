@@ -42,9 +42,9 @@ int initNetwork()
 
 int main(int argc, char *argv[])
 {
-    auto* dbManago = new DatabaseManager();
-    dbManago->run();
-    /*initNetwork();
+    auto* dbManago = new DatabaseManager("ADMIN", "Seikonnoqwaser1!", "tin_high");
+    dbManago->printTest();
+    initNetwork();
 
     cout << "START" << endl;
 
@@ -57,6 +57,6 @@ int main(int argc, char *argv[])
 //    connectionsManager->startAcceptingSensors();
 
     cout << "END" << endl;
-    */
+    
     return 0;
 }

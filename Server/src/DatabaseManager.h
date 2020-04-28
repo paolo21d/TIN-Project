@@ -10,20 +10,19 @@
 #include <occi.h>
 #include <iostream>
 #include <string>
-//#include <SQLAPI.h>
+
+typedef std::vector<std::string> journal;
 
 class DatabaseManager : public IDatabaseManager {
 private:
-    oracle::occi::Environment *env;
-
-    const std::string userName = "ADMIN";
-    const std::string password = "Seikonnoqwaser1!";
-    const std::string connectString = "tin_high";
+    oracle::occi::Environment *environment;
+    oracle::occi::Connection *connection;
 
 public:
-    void run();
-
-    //void gotMeasurement(IMeasurement* measurement) override;
+    DatabaseManager(std::string userName, std::string password, std::string connectString);
+	~DatabaseManager();
+    void addMeasurement(IMeasurement* measurement) override;
+    void printTest();
 };
 
 #endif //SERVER_DATABASEMANAGER_H
