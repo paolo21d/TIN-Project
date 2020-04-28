@@ -106,6 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,6 +142,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,30 +153,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\ConnectionException.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\ConnectionsManager.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\DatabaseManager.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\ISensorConnectionHandler.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\main.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\NetworkUtils.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\SensorConnectionHandler.cpp" />
-    <ClCompile Include="..\..\..\Desktop\TIN-Project\Server\src\SystemUtils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\BytesParser.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\ConnectionException.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\ConnectionsManager.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\DatabaseManager.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\IConnectionsManager.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\IDatabaseManager.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\IMeasurement.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\ISensorConnectionHandler.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\NetworkUtils.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\SensorConnectionHandler.h" />
-    <ClInclude Include="..\..\..\Desktop\TIN-Project\Server\src\SystemUtils.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\BytesParser.h" />
+    <ClInclude Include="..\Common\ConnectionException.h" />
+    <ClInclude Include="..\Common\DoubleMeasurement.h" />
+    <ClInclude Include="..\Common\IMeasurement.h" />
+    <ClInclude Include="..\Common\IRequestListener.h" />
+    <ClInclude Include="..\Common\NetworkUtils.h" />
+    <ClInclude Include="..\Common\SystemUtils.h" />
+    <ClInclude Include="src\ConnectionsManager.h" />
+    <ClInclude Include="src\DatabaseManager.h" />
+    <ClInclude Include="src\IConnectionsManager.h" />
+    <ClInclude Include="src\IDatabaseManager.h" />
+    <ClInclude Include="src\ISensorConnectionHandler.h" />
+    <ClInclude Include="src\SensorConnectionHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\ConnectionException.cpp" />
+    <ClCompile Include="..\Common\DoubleMeasurement.cpp" />
+    <ClCompile Include="..\Common\IRequestListener.cpp" />
+    <ClCompile Include="..\Common\NetworkUtils.cpp" />
+    <ClCompile Include="..\Common\SystemUtils.cpp" />
+    <ClCompile Include="src\ConnectionsManager.cpp" />
+    <ClCompile Include="src\DatabaseManager.cpp" />
+    <ClCompile Include="src\ISensorConnectionHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\SensorConnectionHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

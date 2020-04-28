@@ -1,9 +1,9 @@
 #ifndef ISensorConnectionHandler_h
 #define ISensorConnectionHandler_h
 
-<<<<<<< HEAD
+
 #include <NetworkUtils.h>
-=======
+
 #ifdef _WIN64
 #include "winsock.h"
 #else
@@ -11,7 +11,6 @@
 #include <zconf.h>
 #include <arpa/inet.h>
 #endif
->>>>>>> 6dcc5b5... Added database connection
 
 #include <iostream>
 #include <string>

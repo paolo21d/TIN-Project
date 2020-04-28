@@ -5,25 +5,25 @@ namespace sc
     int ISensorConnectionHandler::getAcceptingSocket(std::string ipAddress, int port, int listeningQueue)
     {
         sockaddr_in service;
-        memset( & service, 0, sizeof( service ) );
+        memset(&service, 0, sizeof(service));
         service.sin_family = AF_INET;
-        service.sin_addr.s_addr = inet_addr( ipAddress.c_str() );
-        service.sin_port = htons( port );
+        service.sin_addr.s_addr = inet_addr(ipAddress.c_str());
+        service.sin_port = htons(port);
 
-        int acceptingSocket = socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+        int acceptingSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
         if (acceptingSocket == -1)
         {
             throw ConnectionException(ConnectionException::CREATE_SOCKET, "Cannot create socket");
         }
 
-        if( bind( acceptingSocket,( sockaddr * ) & service, sizeof( service ) ) == -1 )
+        if (bind(acceptingSocket, (sockaddr*)&service, sizeof(service)) == -1)
         {
-            closeSocket( acceptingSocket );
+            closeSocket(acceptingSocket);
             throw ConnectionException(ConnectionException::BIND, "Cannot bind socket");
         }
 
-        if( listen( acceptingSocket, listeningQueue) == -1)
+        if (listen(acceptingSocket, listeningQueue) == -1)
         {
             closeSocket(acceptingSocket);
             throw ConnectionException(ConnectionException::LISTEN, "Cannot listen socket");
@@ -31,16 +31,4 @@ namespace sc
 
         return acceptingSocket;
     }
-<<<<<<< HEAD
-=======
-
-    int ISensorConnectionHandler::closeSocket(int socketDescriptor)
-    {
-    #ifdef _WIN64
-        return closesocket(socketDescriptor);
-    #else
-        return close(socketDescriptor);
-    #endif
-    }
->>>>>>> 6dcc5b5... Added database connection
 }
